@@ -1,0 +1,25 @@
+.card-body {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-title {
+    margin-bottom: 0.5rem; /* Adjust as needed */
+  }
+  
+  .card-text {
+    margin-bottom: 0; /* Adjust as needed */
+  }
+  
+  /* Additional styles */
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    border-radius: 10px 0 0 10px; /* Rounded corners on the left side */
+  }
+  

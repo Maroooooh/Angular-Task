@@ -1,0 +1,12 @@
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="container-fluid justify-content-center">
+    <nav class="navbar bg-body-tertiary">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchTerm" 
+        [ngModelOptions]="{ standalone: true }"
+        aria-label="Search">
+      </form>
+    </nav>
+  </div>
+</nav>
+<app-users [recievedsearchterm] ="searchTerm"></app-users>

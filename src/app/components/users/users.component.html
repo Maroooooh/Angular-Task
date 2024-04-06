@@ -1,0 +1,49 @@
+<div class="container-fluid" >
+  <div  class="row justify-content-center mb-4 mt-4">
+    <div class="col-lg-10">
+      <div *ngIf="loading" class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      
+      
+      <div *ngIf="!loading" class="row row-cols-1 row-cols-lg-3 row-cols-md-2">
+        <div *ngFor="let user of users;" class="col mb-4">
+          <div class="card"   style="width: 18rem;" (click)="goTodetails(user.id)">
+            <img appCard [src]="user.avatar" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-container >
+        <div [hidden]="loading" *ngIf="notfound"  class="d-flex justify-content-center">
+          <!-- <div class="spinner-border" role="status"> -->
+            <span class="sr-only">Not Found this user  </span>
+          <!-- </div> -->
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <nav class="navbar bottom navbar-light bg-light justify-content-end">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous" (click)="goToPreviousPage()">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" *ngFor="let pnum of pages ">
+        <a class="page-link" href="#"  (click)="setpagenumber(pnum)" >{{ pnum }}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next" (click)="goToNextPage()">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  
+</div>
+
